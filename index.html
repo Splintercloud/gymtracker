@@ -130,88 +130,15 @@ input{
 <h2>🩷 Marie</h2>
 <p>Trainingsplan öffnen</p>
 </div>
-<div class="section">
 
-<div class="header orangeHeader">
-🟠 Dienstag – Unterkörper
-</div>
-
-<div class="content">
-
-<p><b>🚶 Warm-up</b><br>
-5–7 Min. Crosstrainer<br>
-1–2 Aufwärmsätze Beinpresse
-</p>
-
-<br>
-
-<div class="exercise">
-<div>
-<b>Beinpresse</b><br>
-4×10–12
-</div>
-<input type="number" id="sas_beinpresse">
-</div>
-
-<div class="exercise">
-<div>
-<b>Beinbeuger</b><br>
-3×10–12
-</div>
-<input type="number" id="sas_beinbeuger">
-</div>
-
-<div class="exercise">
-<div>
-<b>Beinstrecker</b><br>
-3×12
-</div>
-<input type="number" id="sas_beinstrecker">
-</div>
-
-<div class="exercise">
-<div>
-<b>Wadenheben</b><br>
-3×12–15
-</div>
-<input type="number" id="sas_waden">
-</div>
-
-<div class="exercise">
-<div>
-<b>Bauch</b><br>
-3×10–15
-</div>
-<input type="number" id="sas_bauch">
-</div>
-
-<div class="exercise">
-<div>
-<b>Latzug eng</b><br>
-3×10–12
-</div>
-<input type="number" id="sas_latzzug">
-</div>
-
-<div class="exercise">
-<div>
-<b>Rückenstrecker</b><br>
-3×12–15
-</div>
-<input type="number" id="sas_ruecken">
-</div>
-
-<p style="margin-top:20px">
-🚴 Cardio<br>
-15–20 Minuten
-</p>
-
-</div>
 
 <div id="sascha" class="page">
 
 <div class="back" onclick="backHome()">← Zurück</div>
+<div class="section">
 
+<div class="header orangeHeader">
+🟠 Dienstag – Unterkörper
 </div>
 <div class="section">
 
@@ -437,6 +364,14 @@ document.getElementById("home").classList.add("active");
 // Automatisches Speichern
 // -----------------------------
 
+function backHome(){
+
+document.getElementById("sascha").classList.remove("active");
+document.getElementById("marie").classList.remove("active");
+document.getElementById("home").classList.add("active");
+
+}
+
 function saveInputs(){
 
 document.querySelectorAll("input").forEach(input=>{
@@ -458,7 +393,6 @@ localStorage.setItem(input.id,input.value);
 }
 
 document.addEventListener("DOMContentLoaded",saveInputs);
-}
 
 </script>
 
