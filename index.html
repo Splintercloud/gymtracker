@@ -433,7 +433,31 @@ document.getElementById("sascha").classList.remove("active");
 document.getElementById("marie").classList.remove("active");
 
 document.getElementById("home").classList.add("active");
+// -----------------------------
+// Automatisches Speichern
+// -----------------------------
 
+function saveInputs(){
+
+document.querySelectorAll("input").forEach(input=>{
+
+const value=localStorage.getItem(input.id);
+
+if(value!==null){
+input.value=value;
+}
+
+input.addEventListener("input",()=>{
+
+localStorage.setItem(input.id,input.value);
+
+});
+
+});
+
+}
+
+document.addEventListener("DOMContentLoaded",saveInputs);
 }
 
 </script>
